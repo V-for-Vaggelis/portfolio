@@ -27,7 +27,26 @@
   to { transform: rotate(360deg); }
 }
 
+header {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 .udacity-logo {
   max-height: 80px;
   padding-top: 5px;
+}
+
+.contact-info {
+  padding-left: 2px;
+  padding-right: 20px;
+}
+
+.my-photo {
+  border-radius: 40%/50%;
+  height: 130px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

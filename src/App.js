@@ -5,6 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import portrait from './graduation.JPG'
 
 
 // library.add(faLinkedin, faEnvelope)
@@ -16,9 +17,14 @@ class App extends Component {
         <header>
           <img className="udacity-logo" src={udacity} alt=""></img>
           <h1 id="name">Evangelos Athanasakis</h1>
-          <h2 id="knowledge">Front end developer | Physicist</h2>
+          <h2 id="titles">Front end developer | Physicist</h2>
+          <hr></hr>
         </header>
+        <main>
+          <hr></hr>
+        </main>
         <footer>
+          <img className="my-photo" src={portrait} alt="A formal photo of Evangelos Athanasakis"></img>
           <FontAwesomeIcon icon={faLinkedin} />
           <a className="contact-info" href="https://www.linkedin.com/in/evangelos-athanasakis/">linkedin </a>
           <FontAwesomeIcon icon={faGithub} />
@@ -27,8 +33,8 @@ class App extends Component {
           <a className="contact-info" href="mailto:vaggelis.atha1993@gmail.com">vaggelis.atha1993@gmail.com </a>
         </footer>
       </div>
-      );
-    }
+    );
   }
+}
 
-  export default App;
+export default App;
