@@ -12,6 +12,14 @@ import Dialogue from './components/Dialogue.js'
 // library.add(faLinkedin, faEnvelope)
 
 class App extends Component {
+  state = {
+    messageIndex: 0
+  }
+  updateMessageIndex = () => {
+    this.setState((prevState) => ({
+      messageIndex: prevState.messageIndex + 1
+    }))
+  }
   render() {
     return (
       <div className="App">
@@ -22,7 +30,7 @@ class App extends Component {
           <hr></hr>
         </header>
         <main>
-          <Dialogue />
+          <Dialogue messageCount={this.state.messageIndex} nextQuestion={this.updateMessageIndex}/>
           <hr></hr>
         </main>
         <footer>
