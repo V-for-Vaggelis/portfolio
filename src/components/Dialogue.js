@@ -4,7 +4,13 @@ import { Button, ButtonGroup } from 'react-bootstrap';
 
 class Dialogue extends Component {
   state = {
-    previousDialogue: []
+    previousDialogue: [],
+    dialogueActive: true
+  }
+  terminateDialogue = () => {
+    this.setState(() => ({
+      dialogueActive: false
+    }))
   }
   render() {
     return (
@@ -14,12 +20,18 @@ class Dialogue extends Component {
         <ButtonGroup>
         <Button onClick={() => this.props.nextQuestion()}>Yes</Button>
         <Button onClick={() => this.props.nextQuestion()}>No</Button>
-        <Button onClick={() => this.props.nextQuestion()}>Skip dialogue</Button>
+        <Button onClick={() => this.terminateDialogue()}>Skip dialogue</Button>
         </ButtonGroup>
       }
-      </div>
-    );
-  }
-}
+      {!this.state.dialogueActive &&
+        <section>Straight to the point then, here is all my work as a front-end developer!
+        <h1>Projects go here</h1>
+        </section>
 
-export default Dialogue;
+      }
+        </div>
+      );
+    }
+  }
+
+  export default Dialogue;
