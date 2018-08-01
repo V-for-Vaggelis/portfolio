@@ -18,6 +18,11 @@ class Dialogue extends Component {
       lastAnserYes: true
     }))
   }
+  handleNo = () => {
+    this.setState(() => ({
+      lastAnserYes: false
+    }))
+  }
   render() {
     return (
       <section id="dialogue">
@@ -27,7 +32,9 @@ class Dialogue extends Component {
         <Button onClick={() => {
           this.handleYes()
           this.props.nextQuestion()}}>Yes</Button>
-        <Button onClick={() => this.props.nextQuestion()}>No</Button>
+        <Button onClick={() => {
+          this.handleNo()
+          this.props.nextQuestion()}}>No</Button>
         <Button onClick={() => this.terminateDialogue()}>Skip dialogue</Button>
         </ButtonGroup>
       }
