@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import portrait from './graduation.JPG'
+import Dialogue from './components/Dialogue.js'
 
 
 // library.add(faLinkedin, faEnvelope)
@@ -21,6 +22,7 @@ class App extends Component {
           <hr></hr>
         </header>
         <main>
+          <Dialogue />
           <hr></hr>
         </main>
         <footer>
