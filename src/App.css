@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Itim', cursive;
 }
 
 .App-logo {
@@ -27,7 +28,7 @@
   to { transform: rotate(360deg); }
 }
 
-header {
+header, footer {
   padding-left: 2px;
   padding-right: 2px;
 }
@@ -38,8 +39,13 @@ header {
 }
 
 .contact-info {
-  padding-left: 2px;
-  padding-right: 20px;
+  margin-right: 50px;
+  text-align: center;
+}
+
+.fa-github, .fa-envelope, .fa-linkedin {
+  margin-left: 50px;
+  margin-right: 2px;
 }
 
 .my-photo {
@@ -49,4 +55,16 @@ header {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media screen and (min-width: 406px) {
+  .contact-info {
+    margin-right: 0;
+  }
+  .fa-linkedin {
+    margin-left: 0;
+  }
+  .fa-github, .fa-envelope {
+    margin-left: 20px;
+  }
 }

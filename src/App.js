@@ -25,11 +25,11 @@ class App extends Component {
         </main>
         <footer>
           <img className="my-photo" src={portrait} alt="A formal photo of Evangelos Athanasakis"></img>
-          <FontAwesomeIcon icon={faLinkedin} />
+          <FontAwesomeIcon className="icon" icon={faLinkedin} />
           <a className="contact-info" href="https://www.linkedin.com/in/evangelos-athanasakis/">linkedin </a>
-          <FontAwesomeIcon icon={faGithub} />
+          <FontAwesomeIcon className="icon" icon={faGithub} />
           <a className="contact-info" href="https://github.com/V-for-Vaggelis">github </a>
-          <FontAwesomeIcon icon={faEnvelope} />
+          <FontAwesomeIcon className="icon" icon={faEnvelope} />
           <a className="contact-info" href="mailto:vaggelis.atha1993@gmail.com">vaggelis.atha1993@gmail.com </a>
         </footer>
       </div>
