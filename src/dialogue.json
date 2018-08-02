@@ -4,5 +4,5 @@
   {"positive": "How about a good old memory game?", "allNegative": ""},
   {"positive": "Would you say you are a bookworm?", "allNegative": ""},
   {"positive": "Last question, you gotta love a beautiful beach right?", "allNegative": "You're giving me a hard time finding common ground. Okay, you gotta love a beautoful beach right?"},
-  {"positive": "Seems like we're getting along, hit me up on social-media, here is the rest of my work:", "allNegative": "Wow seems like we have nothing in common, maybe we find some common ground later on, hit me up on social media, Here is the rest of my work as well:"}
+  {"positive": "Seems like we're getting along somehow, hit me up on social-media, here is the rest of my work:", "allNegative": "Wow seems like we have nothing in common, maybe we find some common ground later on, hit me up on social media, Here is the rest of my work as well:"}
 ]

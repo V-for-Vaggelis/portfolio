@@ -6,7 +6,8 @@ class Dialogue extends Component {
   state = {
     previousDialogue: [],
     dialogueActive: true,
-    lastAnserYes: false
+    lastAnserYes: false,
+    commonGround: false
   }
   terminateDialogue = () => {
     this.setState(() => ({
@@ -15,6 +16,7 @@ class Dialogue extends Component {
   }
   handleYes = () => {
     this.setState(() => ({
+      commonGround: true,
       lastAnserYes: true
     }))
   }
@@ -26,7 +28,9 @@ class Dialogue extends Component {
   render() {
     return (
       <section id="dialogue">
-      <p>{messages[this.props.messageCount].positive}</p>
+      <p>{
+        ((this.props.messageCount === 2 || this.props.messageCount === 5 || this.props.messageCount === 6) && this.state.commonGround === false) ?
+        messages[this.props.messageCount].allNegative : messages[this.props.messageCount].positive}</p>
       {this.props.messageCount < 6 &&
         <ButtonGroup>
         <Button onClick={() => {
