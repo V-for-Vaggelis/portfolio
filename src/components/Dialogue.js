@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import messages from '../dialogue.json';
+import projects from '../projects.json';
 import { Button, ButtonGroup } from 'react-bootstrap';
 
 class Dialogue extends Component {
@@ -23,10 +24,12 @@ class Dialogue extends Component {
   }
   handleYes = () => {
     let message = this.showProperMessage()
+    let projectToShow;
+    projects[this.props.messageCount].rendered = true;
     this.setState((prevState) => ({
       commonGround: true,
       lastAnserYes: true,
-      previousQuestions: prevState.previousQuestions.concat([{question: message, answer: "Yes", project: "A project goes here"}])
+      previousQuestions: prevState.previousQuestions.concat([{question: message, answer: "Yes", project: projects[this.props.messageCount]}])
     }))
   }
   handleNo = () => {
@@ -44,32 +47,38 @@ class Dialogue extends Component {
           {(q.project) &&
             <div>
               <p className="me">Then I guess you will love this project:</p>
-              <h2>{q.project}</h2>
+              <h2>{q.project.title}</h2>
             </div>
           }
         </section>
       ))
     }
-      <p className="me">{this.showProperMessage()}</p>
-      {(this.props.messageCount < 6 && this.state.dialogueActive) &&
-        <ButtonGroup id="user-options">
+    <p className="me">{this.showProperMessage()}</p>
+    {(this.props.messageCount < 6 && this.state.dialogueActive) &&
+      <ButtonGroup id="user-options">
+        <Button onClick={() => {
+            this.handleYes()
+            this.props.nextQuestion()}}>Yes</Button>
           <Button onClick={() => {
-              this.handleYes()
-              this.props.nextQuestion()}}>Yes</Button>
-            <Button onClick={() => {
-                this.handleNo()
-                this.props.nextQuestion()}}>No</Button>
-              <Button onClick={() => this.terminateDialogue()}>Skip dialogue</Button>
-            </ButtonGroup>
+              this.handleNo()
+              this.props.nextQuestion()}}>No</Button>
+            <Button onClick={() => this.terminateDialogue()}>Skip dialogue</Button>
+          </ButtonGroup>
+        }
+        {(this.props.messageCount === 6 || !this.state.dialogueActive) &&
+          <section id="all-projects">
+            {!this.state.dialogueActive && <p className="me">Straight to the point then, here is the rest of my work as a front-end developer!</p>
           }
-          {!this.state.dialogueActive &&
-            <section id="all-projects"><p className="me">Straight to the point then, here is all my work as a front-end developer!</p>
-              <h1>Projects go here</h1>
-            </section>
-          }
-        </section>
-      );
+          {projects.map((p) => (
+            (!p.rendered) &&
+            <h1>{p.title}</h1>
+          ))
+        }
+      </section>
     }
-  }
+  </section>
+);
+}
+}
 
-  export default Dialogue;
+export default Dialogue;
