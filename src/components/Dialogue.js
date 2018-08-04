@@ -40,19 +40,19 @@ class Dialogue extends Component {
     return (
       <section id="dialogue">
         {this.state.previousQuestions.map((q) => (
-          <section key={q.question}><span>{q.question}</span> <span>{q.answer}</span>
+          <section key={q.question}><p className="me">{q.question}</p> <p className="user">{q.answer}</p>
           {(q.project) &&
             <div>
-              Then I guess you will love this project:
+              <p className="me">Then I guess you will love this project:</p>
               <h2>{q.project}</h2>
             </div>
           }
         </section>
       ))
     }
-      <p>{this.showProperMessage()}</p>
+      <p className="me">{this.showProperMessage()}</p>
       {(this.props.messageCount < 6 && this.state.dialogueActive) &&
-        <ButtonGroup>
+        <ButtonGroup id="user-options">
           <Button onClick={() => {
               this.handleYes()
               this.props.nextQuestion()}}>Yes</Button>
@@ -63,7 +63,7 @@ class Dialogue extends Component {
             </ButtonGroup>
           }
           {!this.state.dialogueActive &&
-            <section id="all-projects">Straight to the point then, here is all my work as a front-end developer!
+            <section id="all-projects"><p className="me">Straight to the point then, here is all my work as a front-end developer!</p>
               <h1>Projects go here</h1>
             </section>
           }

@@ -31,6 +31,8 @@
 header, footer {
   padding-left: 2px;
   padding-right: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .udacity-logo {
@@ -55,6 +57,27 @@ header, footer {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+#dialogue {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.me {
+  border-radius: 0px 20px 10px 10px;
+  background: rgb(216, 242, 242);
+}
+
+.user {
+  border-radius: 20px 0px 10px 10px;
+  background: rgb(189, 227, 179);
+  text-align: right;
+}
+
+.text-container {
+  width: 100%;
 }
 
 @media screen and (min-width: 406px) {
