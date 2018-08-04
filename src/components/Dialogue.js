@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import messages from '../dialogue.json';
 import projects from '../projects.json';
 import { Button, ButtonGroup } from 'react-bootstrap';
+import Project from './Project.js'
 
 class Dialogue extends Component {
   state = {
@@ -47,7 +48,7 @@ class Dialogue extends Component {
           {(q.project) &&
             <div>
               <p className="me">Then I guess you will love this project:</p>
-              <h2>{q.project.title}</h2>
+              <Project project={q.project}></Project>
             </div>
           }
         </section>
@@ -71,7 +72,7 @@ class Dialogue extends Component {
           }
           {projects.map((p) => (
             (!p.rendered) &&
-            <h1>{p.title}</h1>
+            <Project key={p.title} project={p}></Project>
           ))
         }
       </section>
