@@ -60,7 +60,7 @@ header, footer {
 }
 
 #dialogue {
-  width: 40%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -78,6 +78,36 @@ header, footer {
 
 .text-container {
   width: 100%;
+}
+
+.project-container {
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-container > p {
+  text-align: left;
+  padding-left: 5px;
+}
+
+.project-container > p > em {
+  text-decoration: underline;
+}
+
+.project-link:link {
+  color: coral;
+}
+
+.project-link:hover {
+  font-weight: bold;
+}
+
+.project-link:visited {
+  color: rgb(162, 87, 45);
 }
 
 @media screen and (min-width: 406px) {
