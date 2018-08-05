@@ -68,7 +68,7 @@ class Dialogue extends Component {
         }
         {(this.props.messageCount === 6 || !this.state.dialogueActive) &&
           <section id="all-projects">
-            {!this.state.dialogueActive && <p className="me">Straight to the point then, here is the rest of my work as a front-end developer!</p>
+            {!this.state.dialogueActive && <p className="me">Straight to bussiness then, here is the rest of my work as a front-end developer!</p>
           }
           {projects.map((p) => (
             (!p.rendered) &&

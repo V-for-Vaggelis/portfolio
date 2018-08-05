@@ -66,14 +66,19 @@ header, footer {
 }
 
 .me {
-  border-radius: 0px 20px 10px 10px;
+  border-radius: 0px 15px 10px 10px;
   background: rgb(216, 242, 242);
+  margin-right: auto;
+  text-align: left;
+  width: fit-content;
 }
 
 .user {
-  border-radius: 20px 0px 10px 10px;
+  border-radius: 15px 0px 10px 10px;
   background: rgb(189, 227, 179);
   text-align: right;
+  margin-left: auto;
+  width: fit-content;
 }
 
 .text-container {
