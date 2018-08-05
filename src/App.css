@@ -115,6 +115,15 @@ header, footer {
   color: rgb(162, 87, 45);
 }
 
+.dialogue-button {
+  margin-left: 2px;
+  margin-right: 2px;
+  color: blue;
+  background: white;
+  border: 1px solid blue;
+  border-radius: 10px;
+}
+
 @media screen and (min-width: 406px) {
   .contact-info {
     margin-right: 0;
