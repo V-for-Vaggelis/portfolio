@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 function Project (props) {
   return (
-    <section className="project-container">
+    <section className="project-container" aria-label="Container of a project">
     <h3><a className="project-link" href={props.project.url}>{props.project.title}</a></h3>
     <p><em>Desctiption:</em>  {props.project.description}</p>
     <p><em>Skills used:</em>  {props.project.skillsUsed}</p>

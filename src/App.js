@@ -28,7 +28,7 @@ class App extends Component {
           <div id="header-container">
             <h1 id="name">Evangelos Athanasakis</h1>
             <h2 id="titles">Front end developer | Physicist</h2>
-          </div>  
+          </div>
         </header>
         <hr></hr>
         <main>
@@ -36,7 +36,7 @@ class App extends Component {
           <hr></hr>
         </main>
         <footer>
-          <img className="my-photo" src={portrait} alt="A formal photo of Evangelos Athanasakis"></img>
+          <img className="my-photo" src={portrait} alt="Evangelos Athanasakis signing some papers"></img>
           <FontAwesomeIcon className="icon" icon={faLinkedin} />
           <a className="contact-info" href="https://www.linkedin.com/in/evangelos-athanasakis/">linkedin </a>
           <FontAwesomeIcon className="icon" icon={faGithub} />

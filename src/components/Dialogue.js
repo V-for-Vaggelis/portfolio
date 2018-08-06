@@ -44,9 +44,9 @@ class Dialogue extends Component {
     return (
       <section id="dialogue">
         {this.state.previousQuestions.map((q) => (
-          <section key={q.question}><p className="me">{q.question}</p> <p className="user">{q.answer}</p>
+          <section key={q.question} aria-label="dialogue container"><p className="me">{q.question}</p> <p className="user">{q.answer}</p>
           {(q.project) &&
-            <div>
+            <div aria-label="Response to positive user input">
               <p className="me">Then I guess you will love this project:</p>
               <Project project={q.project}></Project>
             </div>
