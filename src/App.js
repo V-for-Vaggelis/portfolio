@@ -25,10 +25,12 @@ class App extends Component {
       <div className="App">
         <header>
           <img className="udacity-logo" src={udacity} alt=""></img>
-          <h1 id="name">Evangelos Athanasakis</h1>
-          <h2 id="titles">Front end developer | Physicist</h2>
-          <hr></hr>
+          <div id="header-container">
+            <h1 id="name">Evangelos Athanasakis</h1>
+            <h2 id="titles">Front end developer | Physicist</h2>
+          </div>  
         </header>
+        <hr></hr>
         <main>
           <Dialogue messageCount={this.state.messageIndex} nextQuestion={this.updateMessageIndex}/>
           <hr></hr>

@@ -68,14 +68,16 @@ class Dialogue extends Component {
           </ButtonGroup>
         }
         {(this.props.messageCount === 6 || !this.state.dialogueActive) &&
-          <section id="all-projects">
+          <section id="end-interaction">
             {!this.state.dialogueActive && <p className="me">Straight to bussiness then, here is the rest of my work as a front-end developer!</p>
           }
-          {projects.map((p) => (
-            (!p.rendered) &&
-            <Project key={p.title} project={p}></Project>
-          ))
-        }
+          <section id="all-projects">
+            {projects.map((p) => (
+              (!p.rendered) &&
+              <Project key={p.title} project={p}></Project>
+            ))
+          }
+        </section>
       </section>
     }
   </section>

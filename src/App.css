@@ -35,6 +35,14 @@ header, footer {
   margin-bottom: 2px;
 }
 
+#name {
+  font-size: 2em;
+}
+
+#titles{
+  font-size: 1.5em;
+}
+
 .udacity-logo {
   max-height: 80px;
   padding-top: 5px;
@@ -66,7 +74,8 @@ header, footer {
 }
 
 .me {
-  border-radius: 0px 15px 10px 10px;
+  padding: 5px;
+  border-radius: 0px 17px 10px 10px;
   background: rgb(216, 242, 242);
   margin-right: auto;
   text-align: left;
@@ -74,8 +83,9 @@ header, footer {
 }
 
 .user {
-  border-radius: 15px 0px 10px 10px;
+  border-radius: 17px 0px 10px 10px;
   background: rgb(189, 227, 179);
+  padding: 5px;
   text-align: right;
   margin-left: auto;
   width: fit-content;
@@ -89,7 +99,7 @@ header, footer {
   border: 2px solid black;
   border-radius: 10px;
   margin-bottom: 10px;
-  width: 70%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -124,6 +134,10 @@ header, footer {
   border-radius: 10px;
 }
 
+footer {
+  margin-bottom: 5px;
+}
+
 @media screen and (min-width: 406px) {
   .contact-info {
     margin-right: 0;
@@ -133,5 +147,69 @@ header, footer {
   }
   .fa-github, .fa-envelope {
     margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #dialogue {
+    width: 70%;
+  }
+  .project-container {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  #dialogue {
+    width: 60%;
+  }
+  #name {
+    font-size: 2.3em;
+  }
+  #titles{
+    font-size: 1.8em;
+  }
+  h3 {
+    font-size: 1.3em;
+  }
+  #all-projects {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #all-projects > .project-container {
+    width: 48%;
+    /* margin-left: 5%; */
+    /* margin-right: 5%; */
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #dialogue {
+    width: 50%;
+  }
+  header {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+  }
+  .udacity-logo {
+    width: 100px;
+    margin-top: 40px;
+    margin-right: 10%;
+  }
+  .header-container {
+    float: right;
+    /* padding-left: 50px; */
+    width: calc(50%-100px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .App {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
