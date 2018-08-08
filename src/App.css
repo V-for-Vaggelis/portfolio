@@ -138,6 +138,10 @@ footer {
   margin-bottom: 5px;
 }
 
+.skillList {
+  text-align: left;
+}
+
 @media screen and (min-width: 406px) {
   .contact-info {
     margin-right: 0;
