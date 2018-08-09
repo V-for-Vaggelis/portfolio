@@ -142,6 +142,11 @@ footer {
   text-align: left;
 }
 
+.project-thumb {
+  height: 150px;
+  max-width: 100%;
+}
+
 @media screen and (min-width: 406px) {
   .contact-info {
     margin-right: 0;

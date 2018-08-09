@@ -28,6 +28,7 @@ Answer the pop up questions if you want an interactive experience, or click `ski
 <li>The <a href="https://react-bootstrap.github.io/getting-started/introduction/">react-bootstrap</a> package</li>
 <li><a href="https://github.com/FortAwesome/react-fontawesome">react-fontawesome</a></li>
 <li><a href="https://www.npmjs.com/package/gh-pages">gh-pages</a></li>
+<li><a href="https://fonts.google.com/">google-fonts</li>
 </ul>
 
 ## Compatibility and other issues
