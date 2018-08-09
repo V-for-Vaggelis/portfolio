@@ -5,7 +5,7 @@ function Project (props) {
   return (
     <section className="project-container" aria-label="Container of a project">
     <h3><a className="project-link" href={props.project.url}>{props.project.title}</a></h3>
-    <Image className="project-thumb" responsive src={props.project.thumbnail}></Image>
+    <Image className="project-thumb" responsive src={props.project.thumbnail.src} alt={props.project.thumbnail.alt}></Image>
     <p><em>Desctiption:</em>  {props.project.description}</p>
     <p><em>Skills used: </em></p>
     <ul className="skillList">{props.project.skillsUsed.map((skill) => (
