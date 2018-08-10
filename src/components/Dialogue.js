@@ -61,7 +61,7 @@ class Dialogue extends Component {
             <Button className="dialogue-button" onClick={() => this.props.endDialogue()}>Skip dialogue</Button>
           </ButtonGroup>
         }
-        {(!this.props.messageCount === 6 && !this.props.isDialogueActive) &&
+        {(!(this.props.messageCount === 6) && !this.props.isDialogueActive) &&
           <p className="me">Straight to bussiness then, here is the rest of my work as a front-end developer!</p>}
     </section>
   );

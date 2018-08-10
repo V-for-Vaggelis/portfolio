@@ -181,12 +181,23 @@ footer {
     font-size: 1.3em;
   }
   #all-projects {
-    width: 100%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-wrap: wrap;
   }
   #all-projects > .project-container {
     width: 48%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #all-projects {
+    width: 85%;
+  }
+  #all-projects > .project-container {
+    width: 31%;
   }
 }
 
