@@ -59,7 +59,7 @@ header, footer {
 }
 
 .my-photo {
-  border-radius: 40%/50%;
+  border-radius: 50%;
   height: 130px;
   margin-bottom: 10px;
   display: block;
@@ -212,7 +212,7 @@ footer {
     display: flex;
   }
   .udacity-logo {
-    width: 100px;
+    width: 80px;
     margin-top: 40px;
     margin-right: 10%;
   }
