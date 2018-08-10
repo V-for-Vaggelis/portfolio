@@ -7,18 +7,34 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import portrait from './graduation.JPG'
 import Dialogue from './components/Dialogue.js'
+import projects from './projects.json';
+import Project from './components/Project.js'
 
 
 // library.add(faLinkedin, faEnvelope)
 
 class App extends Component {
   state = {
-    messageIndex: 0
+    messageIndex: 0,
+    dialogueActive: true
+  }
+  terminateDialogue = () => {
+    this.setState(() => ({
+      dialogueActive: false
+    }))
   }
   updateMessageIndex = () => {
-    this.setState((prevState) => ({
-      messageIndex: prevState.messageIndex + 1
-    }))
+    if (this.state.messageIndex < 5) {
+      this.setState((prevState) => ({
+        messageIndex: prevState.messageIndex + 1
+      }))
+    }
+    else {
+      this.setState((prevState) => ({
+        messageIndex: prevState.messageIndex + 1,
+        dialogueActive: false
+      }))
+    }
   }
   render() {
     return (
@@ -32,7 +48,15 @@ class App extends Component {
         </header>
         <hr></hr>
         <main>
-          <Dialogue messageCount={this.state.messageIndex} nextQuestion={this.updateMessageIndex}/>
+          <Dialogue messageCount={this.state.messageIndex} nextQuestion={this.updateMessageIndex} isDialogueActive={this.state.dialogueActive} endDialogue={this.terminateDialogue}/>
+          {!this.state.dialogueActive &&
+            <section id="all-projects">
+              {projects.map((p) => (
+                (!p.rendered) &&
+                <Project key={p.title} project={p}></Project>
+              ))
+            }
+          </section>}
           <hr></hr>
         </main>
         <footer>

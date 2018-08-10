@@ -7,7 +7,6 @@ import Project from './Project.js'
 class Dialogue extends Component {
   state = {
     previousQuestions: [],
-    dialogueActive: true,
     lastAnserYes: false,
     commonGround: false
   }
@@ -17,11 +16,6 @@ class Dialogue extends Component {
     question = messages[this.props.messageCount].allNegative :
     question = messages[this.props.messageCount].positive)
     return question;
-  }
-  terminateDialogue = () => {
-    this.setState(() => ({
-      dialogueActive: false
-    }))
   }
   handleYes = () => {
     let message = this.showProperMessage()
@@ -55,7 +49,7 @@ class Dialogue extends Component {
       ))
     }
     <p className="me">{this.showProperMessage()}</p>
-    {(this.props.messageCount < 6 && this.state.dialogueActive) &&
+    {(this.props.messageCount < 6 && this.props.isDialogueActive) &&
       <ButtonGroup id="user-options">
         <hr></hr>
         <Button className="dialogue-button" onClick={() => {
@@ -64,24 +58,13 @@ class Dialogue extends Component {
           <Button className="dialogue-button" onClick={() => {
               this.handleNo()
               this.props.nextQuestion()}}>No</Button>
-            <Button className="dialogue-button" onClick={() => this.terminateDialogue()}>Skip dialogue</Button>
+            <Button className="dialogue-button" onClick={() => this.props.endDialogue()}>Skip dialogue</Button>
           </ButtonGroup>
         }
-        {(this.props.messageCount === 6 || !this.state.dialogueActive) &&
-          <section id="end-interaction">
-            {!this.state.dialogueActive && <p className="me">Straight to bussiness then, here is the rest of my work as a front-end developer!</p>
-          }
-          <section id="all-projects">
-            {projects.map((p) => (
-              (!p.rendered) &&
-              <Project key={p.title} project={p}></Project>
-            ))
-          }
-        </section>
-      </section>
-    }
-  </section>
-);
+        {(!this.props.messageCount === 6 && !this.props.isDialogueActive) &&
+          <p className="me">Straight to bussiness then, here is the rest of my work as a front-end developer!</p>}
+    </section>
+  );
 }
 }
 
