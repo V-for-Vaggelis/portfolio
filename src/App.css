@@ -96,8 +96,11 @@ header, footer {
 }
 
 .project-container {
-  border: 2px solid black;
-  border-radius: 10px;
+  /* border: 2px solid black; */
+  /* border-radius: 30px 3px 30px 3px; */
+  border: 8px ridge rgba(61, 65, 61, 0.7);
+  border-radius: 30px/10px;
+  background: rgb(250, 217, 205);
   margin-bottom: 10px;
   width: 300px;
   margin-left: auto;
@@ -106,23 +109,11 @@ header, footer {
 
 .project-container > p {
   text-align: left;
-  padding-left: 5px;
+  padding-left: 10px;
 }
 
 .project-container > p > em {
-  text-decoration: underline;
-}
-
-.project-link:link {
-  color: coral;
-}
-
-.project-link:hover {
   font-weight: bold;
-}
-
-.project-link:visited {
-  color: rgb(162, 87, 45);
 }
 
 .dialogue-button {
