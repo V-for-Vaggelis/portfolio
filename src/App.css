@@ -117,15 +117,28 @@ header, footer {
 }
 
 .dialogue-button {
-  margin-left: 2px;
-  margin-right: 2px;
+  padding: 5px;
+  font-size: 1.5em;
+  margin-left: 4px;
+  margin-right: 4px;
   color: blue;
   background: white;
   border: 1px solid blue;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.skip-button {
+  margin-left: 10px;
+  color: red;
+  background: white;
+  border: 1px solid red;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 footer {
+  margin-top: 15px;
   margin-bottom: 5px;
 }
 
