@@ -60,7 +60,7 @@ header, footer {
 
 .my-photo {
   border-radius: 50%;
-  height: 130px;
+  height: 110px;
   margin-bottom: 10px;
   display: block;
   margin-left: auto;
@@ -130,9 +130,9 @@ header, footer {
 
 .skip-button {
   margin-left: 10px;
-  color: red;
-  background: white;
-  border: 1px solid red;
+  /* color: grey; */
+  /* background: white; */
+  /* border: 1px solid grey; */
   border-radius: 10px;
   cursor: pointer;
 }
