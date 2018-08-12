@@ -60,7 +60,7 @@ class App extends Component {
           <hr></hr>
         </main>
         <footer>
-          <img className="my-photo" src={portrait} alt="Evangelos Athanasakis signing some papers"></img>
+          <img className="my-photo" src={portrait} alt="Evangelos Athanasakis sitting on a desk and holding a pen."></img>
           <FontAwesomeIcon className="icon" icon={faLinkedin} />
           <a className="contact-info" href="https://www.linkedin.com/in/evangelos-athanasakis/">linkedin </a>
           <FontAwesomeIcon className="icon" icon={faGithub} />
