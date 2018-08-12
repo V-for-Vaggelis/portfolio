@@ -54,7 +54,7 @@ header, footer {
 }
 
 .fa-github, .fa-envelope, .fa-linkedin {
-  margin-left: 50px;
+  margin-left: 55px;
   margin-right: 2px;
 }
 
@@ -147,7 +147,7 @@ footer {
   max-width: 100%;
 }
 
-@media screen and (min-width: 406px) {
+@media screen and (min-width: 450px) {
   .contact-info {
     margin-right: 0;
   }
