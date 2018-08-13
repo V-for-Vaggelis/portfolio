@@ -66,6 +66,7 @@ class Dialogue extends Component {
     </section>
     {(this.props.messageCount < 6 && this.props.isDialogueActive) &&
       <ButtonGroup id="user-options">
+        <hr></hr>
         <Button className="dialogue-button" onClick={() => {
             this.handleYes()
             this.props.nextQuestion()}}>Yes</Button>
