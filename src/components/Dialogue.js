@@ -3,6 +3,7 @@ import messages from '../dialogue.json';
 import projects from '../projects.json';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import Project from './Project.js'
+import avatar from '../my-avatar.png'
 
 class Dialogue extends Component {
   state = {
@@ -44,17 +45,25 @@ class Dialogue extends Component {
     return (
       <section id="dialogue">
         {this.state.previousQuestions.map((q) => (
-          <section key={q.question} aria-label="dialogue container"><p className="me">{q.question}</p> <p className="user">{q.answer}</p>
+          <section key={q.question} aria-label="dialogue container"><section class="author-message" aria-label="author message">
+            <img className="avatar" src={avatar} alt="A small avatar of Evangelos Athanasakis"></img>
+            <p className="me">{q.question}</p>
+          </section>
+          <p className="user">{q.answer}</p>
           {(q.project) &&
-            <div aria-label="Response to positive user input">
+            <section class="author-message" aria-label="author message">
+              <img className="avatar" src={avatar} alt="A small avatar of Evangelos Athanasakis"></img>
               <p className="me">Then I guess you will love this project:</p>
               <Project project={q.project}></Project>
-            </div>
+            </section>
           }
         </section>
       ))
     }
-    <p className="me">{this.showProperMessage()}</p>
+    <section class="author-message" aria-label="author message">
+      <img className="avatar" src={avatar} alt="A small avatar of Evangelos Athanasakis"></img>
+      <p className="me">{this.showProperMessage()}</p>
+    </section>
     {(this.props.messageCount < 6 && this.props.isDialogueActive) &&
       <ButtonGroup id="user-options">
         <Button className="dialogue-button" onClick={() => {
@@ -67,10 +76,13 @@ class Dialogue extends Component {
           </ButtonGroup>
         }
         {(!(this.props.messageCount === 6) && !this.props.isDialogueActive) &&
-          <p className="me">Straight to bussiness then, here is the rest of my work as a front-end developer!</p>}
-    </section>
-  );
-}
-}
+          <section class="author-message" aria-label="author message">
+            <img className="avatar" src={avatar} alt="A small avatar of Evangelos Athanasakis"></img>
+            <p className="me">Straight to bussiness then, here is the rest of my work as a front-end developer!</p>
+          </section>}
+        </section>
+      );
+    }
+  }
 
-export default Dialogue;
+  export default Dialogue;

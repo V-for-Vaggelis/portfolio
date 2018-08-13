@@ -77,7 +77,8 @@ header, footer {
   padding: 5px;
   border-radius: 0px 17px 10px 10px;
   background: rgb(216, 242, 242);
-  margin-right: auto;
+  /* margin-right: auto; */
+  margin-left: 20px;
   text-align: left;
   width: fit-content;
 }
@@ -145,6 +146,18 @@ footer {
 
 .project-thumb {
   max-width: 100%;
+}
+
+.avatar {
+  width: 25px;
+  height: 25px;
+  float: left;
+  border-radius: 50%;
+}
+
+.author-message {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media screen and (min-width: 450px) {
