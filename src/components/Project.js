@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Image} from 'react-bootstrap'
 
+// A stateless component that when called will return a project card
 function Project (props) {
   return (
     <section className="project-container" aria-label="Container of a project">

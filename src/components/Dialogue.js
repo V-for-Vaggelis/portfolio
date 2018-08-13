@@ -10,6 +10,8 @@ class Dialogue extends Component {
     lastAnserYes: false,
     commonGround: false
   }
+
+  // Responsible for showing a proper message to the user at each point, by checking some statements through the hardcoded dialogue of the json file
   showProperMessage = () => {
     let question;
     (((this.props.messageCount === 2 || this.props.messageCount === 5 || this.props.messageCount === 6) && this.state.commonGround === false) ?
@@ -17,9 +19,10 @@ class Dialogue extends Component {
     question = messages[this.props.messageCount].positive)
     return question;
   }
+
+  // Respons properly to a yes response by the user, by showing a message and a project card
   handleYes = () => {
-    let message = this.showProperMessage()
-    let projectToShow;
+    let message = this.showProperMessage();
     projects[this.props.messageCount].rendered = true;
     this.setState((prevState) => ({
       commonGround: true,
@@ -27,13 +30,16 @@ class Dialogue extends Component {
       previousQuestions: prevState.previousQuestions.concat([{question: message, answer: "Yes", project: projects[this.props.messageCount]}])
     }))
   }
+
+  // Responds with a message to a negative user repsonse
   handleNo = () => {
-    let message = this.showProperMessage()
+    let message = this.showProperMessage();
     this.setState((prevState) => ({
       lastAnserYes: false,
       previousQuestions: prevState.previousQuestions.concat([{question: message, answer: "No"}])
     }))
   }
+
   render() {
     return (
       <section id="dialogue">

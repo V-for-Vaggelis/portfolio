@@ -10,19 +10,20 @@ import Dialogue from './components/Dialogue.js'
 import projects from './projects.json';
 import Project from './components/Project.js'
 
-
-// library.add(faLinkedin, faEnvelope)
-
 class App extends Component {
   state = {
     messageIndex: 0,
     dialogueActive: true
   }
+
+  // Signals end of messages in order to show the remaining projects to the user
   terminateDialogue = () => {
     this.setState(() => ({
       dialogueActive: false
     }))
   }
+
+  // Called when user interacts and updates state to show the next message
   updateMessageIndex = () => {
     if (this.state.messageIndex < 5) {
       this.setState((prevState) => ({
