@@ -12,6 +12,7 @@
     "npm": "^6.2.0",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
+    "react-delay": "^0.1.0",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
   },

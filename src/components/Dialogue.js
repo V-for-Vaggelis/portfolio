@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import messages from '../dialogue.json';
 import projects from '../projects.json';
-import { Button, ButtonGroup } from 'react-bootstrap';
 import Project from './Project.js'
 import avatar from '../my-avatar.png'
+import Question from './Question.js'
 
 class Dialogue extends Component {
   state = {
@@ -60,27 +60,8 @@ class Dialogue extends Component {
         </section>
       ))
     }
-    <section class="author-message" aria-label="author message">
-      <img className="avatar" src={avatar} alt="A small avatar of Evangelos Athanasakis"></img>
-      <p className="me">{this.showProperMessage()}</p>
-    </section>
-    {(this.props.messageCount < 6 && this.props.isDialogueActive) &&
-      <ButtonGroup id="user-options">
-        <hr></hr>
-        <Button className="dialogue-button" onClick={() => {
-            this.handleYes()
-            this.props.nextQuestion()}}>Yes</Button>
-          <Button className="dialogue-button" onClick={() => {
-              this.handleNo()
-              this.props.nextQuestion()}}>No</Button>
-            <Button className="skip-button" onClick={() => this.props.endDialogue()}>Skip dialogue</Button>
-          </ButtonGroup>
-        }
-        {(!(this.props.messageCount === 6) && !this.props.isDialogueActive) &&
-          <section class="author-message" aria-label="author message">
-            <img className="avatar" src={avatar} alt="A small avatar of Evangelos Athanasakis"></img>
-            <p className="me">Straight to bussiness then, here is the rest of my work as a front-end developer!</p>
-          </section>}
+    <Question showProperQuestion={this.showProperMessage} messageIndex={this.props.messageCount} dialogueActive={this.props.isDialogueActive}
+      handlePositive={this.handleYes} handleNegative={this.handleNo} showNext={this.props.nextQuestion} terminate={this.props.endDialogue}></Question>
         </section>
       );
     }
