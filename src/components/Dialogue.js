@@ -13,6 +13,18 @@ class Dialogue extends Component {
     commonGround: false
   }
 
+  componentDidUpdate() {
+    let projects = document.getElementsByClassName("avatar");
+    let projectsArray = [...projects];
+    console.log(projectsArray);
+    if (projectsArray && projects.length > 0) {
+      let index = projectsArray.length - 1;
+      let lastProject = projectsArray[index];
+      console.log(lastProject);
+      lastProject.scrollIntoView();
+    }
+  }
+
   // Responsible for showing a proper message to the user at each point, by checking some statements through the hardcoded dialogue of the json file
   showProperMessage = () => {
     let question;
@@ -46,13 +58,13 @@ class Dialogue extends Component {
     return (
       <section id="dialogue">
         {this.state.previousQuestions.map((q) => (
-          <section key={q.question} aria-label="dialogue container"><section class="author-message" aria-label="author message">
+          <section key={q.question} aria-label="dialogue container"><section className="author-message" aria-label="author message">
             <img className="avatar" src={avatar} alt="A small avatar of Evangelos Athanasakis"></img>
             <p className="me">{q.question}</p>
           </section>
           <p className="user">{q.answer}</p>
           {(q.project) &&
-            <section class="author-message" aria-label="author message">
+            <section className="author-message" aria-label="author message">
               <img className="avatar" src={avatar} alt="A small avatar of Evangelos Athanasakis"></img>
               <p className="me">Then I guess you will love this project:</p>
               <Project project={q.project}></Project>
@@ -61,11 +73,14 @@ class Dialogue extends Component {
         </section>
       ))
     }
-    <Question showProperQuestion={this.showProperMessage} messageIndex={this.props.messageCount} dialogueActive={this.props.isDialogueActive}
-      handlePositive={this.handleYes} handleNegative={this.handleNo} showNext={this.props.nextQuestion} terminate={this.props.endDialogue}></Question>
-        </section>
-      );
-    }
-  }
+    <Delay wait={2000}>
+      <Question showProperQuestion={this.showProperMessage} messageIndex={this.props.messageCount} dialogueActive={this.props.isDialogueActive}
+        handlePositive={this.handleYes} handleNegative={this.handleNo} showNext={this.props.nextQuestion} terminate={this.props.endDialogue}>
+      </Question>
+    </Delay>
+  </section>
+);
+}
+}
 
-  export default Dialogue;
+export default Dialogue;

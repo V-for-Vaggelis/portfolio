@@ -5,7 +5,7 @@ import { Button, ButtonGroup } from 'react-bootstrap';
 function Question (props) {
   return (
     <section className="question" aria-label="question container">
-    <section class="author-message" aria-label="author message">
+    <section className="author-message" aria-label="author message">
       <img className="avatar" src={avatar} alt="A small avatar of Evangelos Athanasakis"></img>
       <p className="me">{props.showProperQuestion()}</p>
     </section>
@@ -22,7 +22,7 @@ function Question (props) {
           </ButtonGroup>
         }
         {(!(props.messageIndex === 6) && !props.dialogueActive) &&
-          <section class="author-message" aria-label="author message">
+          <section className="author-message" aria-label="author message">
             <img className="avatar" src={avatar} alt="A small avatar of Evangelos Athanasakis"></img>
             <p className="me">Straight to bussiness then, here is the rest of my work as a front-end developer!</p>
           </section>}
