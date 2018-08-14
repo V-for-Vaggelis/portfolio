@@ -4,6 +4,7 @@ import projects from '../projects.json';
 import Project from './Project.js'
 import avatar from '../my-avatar.png'
 import Question from './Question.js'
+import Delay from 'react-delay'
 
 class Dialogue extends Component {
   state = {
