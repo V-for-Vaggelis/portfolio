@@ -13,15 +13,26 @@ class Dialogue extends Component {
     commonGround: false
   }
 
+  // Autoscrolls the user to the newly rendered dialogue messages
   componentDidUpdate() {
-    let projects = document.getElementsByClassName("avatar");
-    let projectsArray = [...projects];
-    console.log(projectsArray);
-    if (projectsArray && projects.length > 0) {
-      let index = projectsArray.length - 1;
-      let lastProject = projectsArray[index];
-      console.log(lastProject);
-      lastProject.scrollIntoView();
+    let targets;
+    if (this.state.lastAnserYes || !this.props.isDialogueActive) {
+      targets = document.getElementsByClassName("avatar");
+    }
+    else {
+      targets = document.getElementsByClassName("user");
+    }
+    let targetsArray = [...targets];
+    if (targetsArray && targetsArray.length > 0) {
+      let index;
+      if (this.state.lastAnserYes) {
+        index = targetsArray.length - 2;
+      }
+      else {
+        index = targetsArray.length - 1;
+      }
+      let lastTarget = targetsArray[index];
+      lastTarget.scrollIntoView();
     }
   }
 
