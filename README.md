@@ -29,6 +29,7 @@ Answer the pop up questions if you want an interactive experience, or click `ski
 <li><a href="https://github.com/FortAwesome/react-fontawesome">react-fontawesome</a></li>
 <li><a href="https://www.npmjs.com/package/gh-pages">gh-pages</a></li>
 <li><a href="https://fonts.google.com/">google-fonts</li>
+<li><a href="https://www.npmjs.com/package/react-delay">react-delay</li>
 </ul>
 
 ## Compatibility and other issues
