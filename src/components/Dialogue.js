@@ -10,7 +10,8 @@ class Dialogue extends Component {
   state = {
     previousQuestions: [],
     lastAnserYes: false,
-    commonGround: false
+    commonGround: false,
+    messageLoading: false
   }
 
   // Autoscrolls the user to the newly rendered dialogue messages
@@ -34,6 +35,17 @@ class Dialogue extends Component {
       let lastTarget = targetsArray[index];
       lastTarget.scrollIntoView();
     }
+  }
+
+
+  // Fires a loading message animation
+  activateLoadingAnimation = () => {
+    this.setState({messageLoading: true})
+  }
+
+  // Stops the loading message animation
+  disableLoadingAnimation = () => {
+    this.setState({messageLoading: false})
   }
 
   // Responsible for showing a proper message to the user at each point, by checking some statements through the hardcoded dialogue of the json file
@@ -86,7 +98,8 @@ class Dialogue extends Component {
     }
     <Delay wait={2000}>
       <Question showProperQuestion={this.showProperMessage} messageIndex={this.props.messageCount} dialogueActive={this.props.isDialogueActive}
-        handlePositive={this.handleYes} handleNegative={this.handleNo} showNext={this.props.nextQuestion} terminate={this.props.endDialogue}>
+        handlePositive={this.handleYes} handleNegative={this.handleNo} showNext={this.props.nextQuestion} terminate={this.props.endDialogue}
+        loadingAnimation={this.state.messageLoading} startAnimation={this.activateLoadingAnimation} stopAnimation={this.disableLoadingAnimation}>
       </Question>
     </Delay>
   </section>
