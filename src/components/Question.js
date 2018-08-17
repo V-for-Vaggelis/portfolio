@@ -19,9 +19,13 @@ function Question (props) {
           <ButtonGroup id="user-options">
             <hr></hr>
             <Button className="dialogue-button" onClick={() => {
+                props.handlePositive()
                 props.startAnimation()
                 setTimeout(function() {
-                  props.handlePositive()}, 3000)
+                  props.stopAnimation()
+                  props.createProject()
+                  props.startAnimation()
+                  }, 3000)
                   setTimeout(function() {
                     props.stopAnimation()
                     props.showNext()}, 6000)}}>Yes</Button>

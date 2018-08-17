@@ -15,6 +15,8 @@ class Dialogue extends Component {
   }
 
   // Autoscrolls the user to the newly rendered dialogue messages
+  // After loading messagge effect autoscroll is bugged and needs fix
+  /*
   componentDidUpdate() {
     let targets;
     if (this.state.lastAnserYes || !this.props.isDialogueActive) {
@@ -35,7 +37,7 @@ class Dialogue extends Component {
       let lastTarget = targetsArray[index];
       lastTarget.scrollIntoView();
     }
-  }
+  }/*
 
 
   // Fires a loading message animation
@@ -60,12 +62,16 @@ class Dialogue extends Component {
   // Respons properly to a yes response by the user, by showing a message and a project card
   handleYes = () => {
     let message = this.showProperMessage();
-    projects[this.props.messageCount].rendered = true;
+
     this.setState((prevState) => ({
       commonGround: true,
       lastAnserYes: true,
-      previousQuestions: prevState.previousQuestions.concat([{question: message, answer: "Yes", project: projects[this.props.messageCount]}])
+      previousQuestions: prevState.previousQuestions.concat([{question: message, answer: "Yes", index: this.props.messageCount}])
     }))
+  }
+
+  renderProject = () => {
+    projects[this.props.messageCount].rendered = true;
   }
 
   // Responds with a message to a negative user repsonse
@@ -86,11 +92,11 @@ class Dialogue extends Component {
             <p className="me">{q.question}</p>
           </section>
           <p className="user">{q.answer}</p>
-          {(q.project) &&
+          {(q.answer === "Yes" && projects[q.index].rendered) &&
             <section className="author-message" aria-label="author message">
               <img className="avatar" src={avatar} alt="A small avatar of Evangelos Athanasakis"></img>
               <p className="me">Then I guess you will love this project:</p>
-              <Project project={q.project}></Project>
+              <Project project={projects[q.index]}></Project>
             </section>
           }
         </section>
@@ -99,7 +105,8 @@ class Dialogue extends Component {
     <Delay wait={2000}>
       <Question showProperQuestion={this.showProperMessage} messageIndex={this.props.messageCount} dialogueActive={this.props.isDialogueActive}
         handlePositive={this.handleYes} handleNegative={this.handleNo} showNext={this.props.nextQuestion} terminate={this.props.endDialogue}
-        loadingAnimation={this.state.messageLoading} startAnimation={this.activateLoadingAnimation} stopAnimation={this.disableLoadingAnimation}>
+        loadingAnimation={this.state.messageLoading} startAnimation={this.activateLoadingAnimation} stopAnimation={this.disableLoadingAnimation} createProject={this.renderProject}
+        >
       </Question>
     </Delay>
   </section>
