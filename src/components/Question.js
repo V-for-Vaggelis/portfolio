@@ -5,7 +5,10 @@ import { Button, ButtonGroup } from 'react-bootstrap';
 function Question (props) {
   if (props.loadingAnimation) {
     return (
-      <span>Loading</span>
+      <section className="author-message" aria-label="author message">
+        <img className="avatar" src={avatar} alt="A small avatar of Evangelos Athanasakis"></img>
+        <p id="replying"><span id="dot1">&#8226;</span><span id="dot2">&#8226;</span><span id="dot3">&#8226;</span></p>
+      </section>
     )
   }
   else {
@@ -25,28 +28,28 @@ function Question (props) {
                   props.stopAnimation()
                   props.createProject()
                   props.startAnimation()
-                  }, 3000)
-                  setTimeout(function() {
-                    props.stopAnimation()
-                    props.showNext()}, 6000)}}>Yes</Button>
-                  <Button className="dialogue-button" onClick={() => {
-                      props.handleNegative()
-                      props.startAnimation()
-                      setTimeout(function() {
-                        props.stopAnimation()
-                        props.showNext()}, 3000)
-                      }}>No</Button>
-                      <Button className="skip-button" onClick={() => props.terminate()}>Skip dialogue</Button>
-                    </ButtonGroup>
-                  }
-                  {(!(props.messageIndex === 6) && !props.dialogueActive) &&
-                    <section className="author-message" aria-label="author message">
-                      <img className="avatar" src={avatar} alt="A small avatar of Evangelos Athanasakis"></img>
-                      <p className="me">Straight to bussiness then, here is the rest of my work as a front-end developer!</p>
-                    </section>}
-                  </section>
-                )
-              }
+                }, 3000)
+                setTimeout(function() {
+                  props.stopAnimation()
+                  props.showNext()}, 6000)}}>Yes</Button>
+                <Button className="dialogue-button" onClick={() => {
+                    props.handleNegative()
+                    props.startAnimation()
+                    setTimeout(function() {
+                      props.stopAnimation()
+                      props.showNext()}, 3000)
+                    }}>No</Button>
+                    <Button className="skip-button" onClick={() => props.terminate()}>Skip dialogue</Button>
+                  </ButtonGroup>
+                }
+                {(!(props.messageIndex === 6) && !props.dialogueActive) &&
+                  <section className="author-message" aria-label="author message">
+                    <img className="avatar" src={avatar} alt="A small avatar of Evangelos Athanasakis"></img>
+                    <p className="me">Straight to bussiness then, here is the rest of my work as a front-end developer!</p>
+                  </section>}
+                </section>
+              )
             }
+          }
 
-            export default Question
+          export default Question

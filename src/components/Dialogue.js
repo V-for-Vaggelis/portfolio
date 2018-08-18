@@ -15,29 +15,24 @@ class Dialogue extends Component {
   }
 
   // Autoscrolls the user to the newly rendered dialogue messages
-  // After loading messagge effect autoscroll is bugged and needs fix
-  /*
   componentDidUpdate() {
-    let targets;
-    if (this.state.lastAnserYes || !this.props.isDialogueActive) {
-      targets = document.getElementsByClassName("avatar");
-    }
-    else {
-      targets = document.getElementsByClassName("user");
-    }
-    let targetsArray = [...targets];
-    if (targetsArray && targetsArray.length > 0) {
-      let index;
-      if (this.state.lastAnserYes) {
-        index = targetsArray.length - 2;
+    if (!this.state.messageLoading) {
+      let targets;
+      if (this.state.lastAnserYes || !this.props.isDialogueActive) {
+        targets = document.getElementsByClassName("avatar");
       }
       else {
-        index = targetsArray.length - 1;
+        targets = document.getElementsByClassName("user");
       }
-      let lastTarget = targetsArray[index];
-      lastTarget.scrollIntoView();
+      let targetsArray = [...targets];
+      if (targetsArray && targetsArray.length > 0) {
+        let index;
+        index = targetsArray.length - 1;
+        let lastTarget = targetsArray[index];
+        lastTarget.scrollIntoView();
+      }
     }
-  }/*
+  }
 
 
   // Fires a loading message animation
