@@ -167,6 +167,45 @@ footer {
   text-align: left;
   width: fit-content;
   font-size: 2em;
+  position: relative;
+  padding-bottom: 40px;
+  padding-left: 19px;
+  padding-right: 19px;
+}
+
+.bounceFirst {
+  left: 2px;
+  position: absolute;
+  animation: bounce 1.6s infinite;
+}
+
+.bounceSecond {
+  position: absolute;
+  left: 10px;
+  animation: bounce 1.6s infinite;
+  animation-delay: 0.4s;
+}
+
+.bounceThird {
+  position: absolute;
+  left: 20px;
+  animation: bounce 1.6s infinite;
+  animation-delay: 0.8s;
+}
+
+@keyframes bounce {
+  0%
+  {
+    transform: translateY(0);
+  }
+  50%
+  {
+    transform: translateY(-5px);
+  }
+  100%
+  {
+    transform: translateY(0);
+  }
 }
 
 @media screen and (min-width: 450px) {

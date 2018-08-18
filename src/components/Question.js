@@ -7,7 +7,11 @@ function Question (props) {
     return (
       <section className="author-message" aria-label="author message">
         <img className="avatar" src={avatar} alt="A small avatar of Evangelos Athanasakis"></img>
-        <p id="replying"><span id="dot1">&#8226;</span><span id="dot2">&#8226;</span><span id="dot3">&#8226;</span></p>
+        <p id="replying">
+          <span className="bounceThird">&#8226;</span>
+          <span className="bounceSecond">&#8226;</span>
+          <span className="bounceFirst">&#8226;</span>
+        </p>
       </section>
     )
   }
