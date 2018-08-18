@@ -176,21 +176,21 @@ footer {
 .bounceFirst {
   left: 2px;
   position: absolute;
-  animation: bounce 1.6s infinite;
+  animation: bounce 0.8s infinite;
 }
 
 .bounceSecond {
   position: absolute;
   left: 10px;
-  animation: bounce 1.6s infinite;
-  animation-delay: 0.4s;
+  animation: bounce 0.8s infinite;
+  animation-delay: 0.2s;
 }
 
 .bounceThird {
   position: absolute;
   left: 20px;
-  animation: bounce 1.6s infinite;
-  animation-delay: 0.8s;
+  animation: bounce 0.8s infinite;
+  animation-delay: 0.4s;
 }
 
 @keyframes bounce {
