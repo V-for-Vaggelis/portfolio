@@ -35,3 +35,5 @@ Answer the pop up questions if you want an interactive experience, or click `ski
 ## Compatibility and other issues
 
 The page was developed and tested in Google Chrome's  enviroment, but it should work on any browser and device. Please report any compatibility or other issues.
+
+**Warning:** this website intentionally creates delay effects, in order to simulate a live conversation. This might cause performance audits to fail.
