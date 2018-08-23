@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import udacity from './udacity.png';
+import myLogo from './V_logo.svg';
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -41,7 +41,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <img className="udacity-logo" src={udacity} alt=""></img>
+          <img className="my-logo" src={myLogo} alt=""></img>
           <div id="header-container">
             <h1 id="name">Evangelos Athanasakis</h1>
             <h2 id="titles">Front end developer | Physicist</h2>

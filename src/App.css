@@ -43,9 +43,10 @@ header, footer {
   font-size: 1.5em;
 }
 
-.udacity-logo {
+.my-logo {
   max-height: 80px;
   padding-top: 5px;
+  border-radius: 60%/50%;
 }
 
 .fa-github, .fa-envelope, .fa-linkedin {
@@ -282,7 +283,7 @@ footer {
     margin-right: auto;
     display: flex;
   }
-  .udacity-logo {
+  .my-logo {
     width: 80px;
     margin-top: 40px;
     margin-right: 10%;
