@@ -141,8 +141,13 @@ header, footer {
   color: red
 }
 
+#user-options {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
 .skip-button {
-  color: orange;
+  color: white;
   background: black;
   padding: 2px;
   margin-left: 200px;
