@@ -3,6 +3,14 @@
   font-family: 'Rubik', sans-serif;
 }
 
+body {
+  background: rgb(194, 213, 154);
+}
+
+hr {
+  border-color: brown;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -72,8 +80,9 @@ header, footer {
 .me {
   padding: 5px;
   border-radius: 0px 17px 10px 10px;
-  background: rgb(216, 242, 242);
+  /* background: rgb(216, 242, 242); */
   /* margin-right: auto; */
+  background: rgb(154, 208, 242);
   margin-left: 20px;
   text-align: left;
   width: fit-content;
@@ -81,7 +90,8 @@ header, footer {
 
 .user {
   border-radius: 17px 0px 10px 10px;
-  background: rgb(189, 227, 179);
+  /* background: rgb(189, 227, 179); */
+  background: rgb(129, 145, 228);
   padding: 5px;
   text-align: right;
   margin-left: auto;
@@ -116,15 +126,28 @@ header, footer {
   font-size: 1.5em;
   margin-left: 4px;
   margin-right: 4px;
-  color: blue;
-  background: white;
-  border: 1px solid blue;
+  border-width: thick;
+  font-weight: bold;
+  background: black;
   border-radius: 10px;
   cursor: pointer;
 }
 
+#yes {
+  color: rgb(51, 221, 0);
+}
+
+#no {
+  color: red
+}
+
 .skip-button {
+  color: orange;
+  background: black;
+  padding: 2px;
+  margin-left: 200px;
   margin-left: 10px;
+  border-width: thick;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -156,7 +179,7 @@ footer {
 
 #replying {
   border-radius: 10px;
-  background: rgb(216, 242, 242);
+  background: rgb(154, 208, 242);
   margin-left: 20px;
   text-align: left;
   width: fit-content;

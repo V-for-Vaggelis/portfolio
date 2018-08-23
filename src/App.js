@@ -39,7 +39,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="App" aria-label="Pages's container">
         <header>
           <img className="my-logo" src={myLogo} alt=""></img>
           <div id="header-container">
@@ -63,8 +63,8 @@ class App extends Component {
         <footer>
           <img className="my-photo" src={portrait} alt="Evangelos Athanasakis sitting on a desk and holding a pen."></img>
           <div id="media-container">
-          <a className="linkedin" href="https://www.linkedin.com/in/evangelos-athanasakis/"><FontAwesomeIcon className="icon-media" icon={faLinkedin} /></a>
-          <a className="github" href="https://github.com/V-for-Vaggelis"><FontAwesomeIcon className="icon-media" icon={faGithub} /></a>
+          <a className="linkedin" href="https://www.linkedin.com/in/evangelos-athanasakis/" aria-label="Linkedin profile link"><FontAwesomeIcon className="icon-media" icon={faLinkedin} alt="Linkedin's logo" /></a>
+          <a className="github" href="https://github.com/V-for-Vaggelis" aria-label="Github profile link"><FontAwesomeIcon className="icon-media" icon={faGithub} alt="Github's logo"/></a>
           </div>
           <a className="mail" href="mailto:vaggelis.atha1993@gmail.com"><FontAwesomeIcon className="icon" icon={faEnvelope} />vaggelis.atha1993@gmail.com </a>
         </footer>

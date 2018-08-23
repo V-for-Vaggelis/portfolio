@@ -25,7 +25,7 @@ function Question (props) {
         {(props.messageIndex < 6 && props.dialogueActive) &&
           <ButtonGroup id="user-options">
             <hr></hr>
-            <Button className="dialogue-button" onClick={() => {
+            <Button className="dialogue-button" id="yes" onClick={() => {
                 props.handlePositive()
                 props.startAnimation()
                 setTimeout(function() {
@@ -36,7 +36,7 @@ function Question (props) {
                 setTimeout(function() {
                   props.stopAnimation()
                   props.showNext()}, 6000)}}>Yes</Button>
-                <Button className="dialogue-button" onClick={() => {
+                <Button className="dialogue-button" id="no" onClick={() => {
                     props.handleNegative()
                     props.startAnimation()
                     setTimeout(function() {
