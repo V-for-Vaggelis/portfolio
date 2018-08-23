@@ -62,12 +62,11 @@ class App extends Component {
         </main>
         <footer>
           <img className="my-photo" src={portrait} alt="Evangelos Athanasakis sitting on a desk and holding a pen."></img>
-          <FontAwesomeIcon className="icon" icon={faLinkedin} />
-          <a className="contact-info" href="https://www.linkedin.com/in/evangelos-athanasakis/">linkedin </a>
-          <FontAwesomeIcon className="icon" icon={faGithub} />
-          <a className="contact-info" href="https://github.com/V-for-Vaggelis">github </a>
-          <FontAwesomeIcon className="icon" icon={faEnvelope} />
-          <a className="contact-info" href="mailto:vaggelis.atha1993@gmail.com">vaggelis.atha1993@gmail.com </a>
+          <div id="media-container">
+          <a className="linkedin" href="https://www.linkedin.com/in/evangelos-athanasakis/"><FontAwesomeIcon className="icon-media" icon={faLinkedin} /></a>
+          <a className="github" href="https://github.com/V-for-Vaggelis"><FontAwesomeIcon className="icon-media" icon={faGithub} /></a>
+          </div>
+          <a className="mail" href="mailto:vaggelis.atha1993@gmail.com"><FontAwesomeIcon className="icon" icon={faEnvelope} />vaggelis.atha1993@gmail.com </a>
         </footer>
       </div>
     );
