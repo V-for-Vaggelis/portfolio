@@ -14,7 +14,8 @@
     "react-bootstrap": "^0.32.1",
     "react-delay": "^0.1.0",
     "react-dom": "^16.4.1",
-    "react-scripts": "^3.0.1"
+    "react-scripts": "^3.0.1",
+    "typescript": "^3.5.3"
   },
   "scripts": {
     "start": "react-scripts start",
